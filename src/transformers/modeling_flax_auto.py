@@ -19,8 +19,8 @@ from collections import OrderedDict
 
 from .configuration_auto import AutoConfig, BertConfig, RobertaConfig
 from .configuration_utils import PretrainedConfig
-from .modeling_flax_bert import FlaxBertModel
-from .modeling_flax_roberta import FlaxRobertaModel
+from .modeling_flax_bert import FlaxBert
+from .modeling_flax_roberta import FlaxRoberta
 from .utils import logging
 
 
@@ -30,16 +30,16 @@ logger = logging.get_logger(__name__)
 ALL_PRETRAINED_MODEL_ARCHIVE_MAP = dict(
     (key, value)
     for pretrained_map in [
-        FlaxBertModel.pretrained_model_archive_map,
-        FlaxRobertaModel.pretrained_model_archive_map,
+        FlaxBert.pretrained_model_archive_map,
+        FlaxRoberta.pretrained_model_archive_map,
     ]
     for key, value, in pretrained_map.items()
 )
 
 MODEL_MAPPING = OrderedDict(
     [
-        (RobertaConfig, FlaxRobertaModel),
-        (BertConfig, FlaxBertModel),
+        (RobertaConfig, FlaxRoberta),
+        (BertConfig, FlaxBert),
     ]
 )
 
