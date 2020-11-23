@@ -876,7 +876,7 @@ else:
 
 
 if is_flax_available():
-    from .modeling_flax_bert import FlaxBertModel
+    from .modeling_flax_bert import FlaxBertModel, FlaxBertForMaskedLM
     from .modeling_flax_roberta import FlaxRobertaModel
 else:
     # Import the same objects as dummies to get them in the namespace.
